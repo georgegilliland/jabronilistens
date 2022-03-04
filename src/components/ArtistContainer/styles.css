@@ -1,0 +1,14 @@
+.ArtistContainer {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+    .ArtistContainer {
+        flex-direction: column;
+        position: relative;
+    }
+}
