@@ -17,7 +17,7 @@ const ArtistInfo = ({ vibrant, muted, name, genres }) => {
     <div className="ArtistInfo" style={{ backgroundColor: vibrantBackground }}>
       <div className="InnerArtistInfoContainer" style={{ color: mutedText }}>
         <div className="ArtistTitle">{name}</div>
-        <div className="ArtistGenres">{genres[0]}</div>
+        {/* <div className="ArtistGenres">{genres[0]}</div> */}
       </div>
     </div>
   );

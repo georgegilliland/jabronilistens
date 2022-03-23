@@ -1,13 +1,14 @@
-import React from 'react';
+import React from "react";
+import moment from "moment";
 import { useQuery } from "@apollo/client";
 import { gql } from "@apollo/client";
-import LandingPage from './components/LandingPage/LandingPage';
-import ArtistContainer from "./components/ArtistContainer/index";;
+import LandingPage from "./components/LandingPage/LandingPage";
+import ArtistContainer from "./components/ArtistContainer/index";
 import Loading from './components/Loading/Loading';
 
 const GET_ARTISTS = gql`
-  query($popularity: Int ) {
-    artists(input: { popularity: $popularity }) {
+  query($popularity: Int, $updatedAt: String ) {
+    artists(input: { popularity: $popularity, updatedAt: $updatedAt }) {
       id
       name
       genres
@@ -19,9 +20,11 @@ const GET_ARTISTS = gql`
 `;
 
 function App() {
-  const { data, loading, error} = useQuery(GET_ARTISTS, {
+  
+  const { data, loading } = useQuery(GET_ARTISTS, {
     variables: {
-        popularity: 30
+        popularity: 30,
+        updatedAt: moment().startOf('week').subtract(1,'d').format('YYYY-MM-DDT00:00:00')
     }
   });
 

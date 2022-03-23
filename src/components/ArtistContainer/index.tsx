@@ -5,8 +5,8 @@ import ArtistInfo from '../ArtistInfo';
 import './styles.css';
 
 const getColors = async (imageUrl) => {
-  const v = new Vibrant(imageUrl)
-  return await v.getPalette((err, palette) => palette)
+  const v = new Vibrant(imageUrl);
+  return await v.getPalette((err, palette) => palette);
 };
 
 const ArtistContainer = ({ name, genres, image }) => {
@@ -18,7 +18,7 @@ const ArtistContainer = ({ name, genres, image }) => {
     async function fetchColors() {
       if (vibrant === null && muted === null) {
         const palette = await getColors(image);
-        setVibrant(palette.Vibrant?.rgb)
+        setVibrant(palette.LightVibrant?.rgb)
         setMuted(palette.DarkMuted?.rgb)
       }
     }
