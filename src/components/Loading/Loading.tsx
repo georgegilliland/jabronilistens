@@ -3,8 +3,8 @@ import './styles.css';
 
 const Loading = () => {
   return (
-    <div className="Loading">
-        Loading...
+    <div className="loadingIconContainer" data-testid="loading-icon-container">
+        <div className="loadingIcon"></div>
     </div> 
   );
 }

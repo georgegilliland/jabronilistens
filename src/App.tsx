@@ -1,26 +1,13 @@
 import React from "react";
 import moment from "moment";
 import { useQuery } from "@apollo/client";
-import { gql } from "@apollo/client";
 import LandingPage from "./components/LandingPage/LandingPage";
 import ArtistContainer from "./components/ArtistContainer/index";
 import Loading from './components/Loading/Loading';
-
-const GET_ARTISTS = gql`
-  query($popularity: Int, $updatedAt: String ) {
-    artists(input: { popularity: $popularity, updatedAt: $updatedAt }) {
-      id
-      name
-      genres
-      image {
-        link
-      }
-    }
-  }
-`;
+import { GET_ARTISTS } from './queries/index'
 
 function App() {
-  
+
   const { data, loading } = useQuery(GET_ARTISTS, {
     variables: {
         popularity: 30,
@@ -33,6 +20,7 @@ function App() {
       <Loading />
     )
   }
+
   return (
     <div className="App">
       <LandingPage />
