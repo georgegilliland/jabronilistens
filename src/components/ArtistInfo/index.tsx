@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-const ArtistInfo = ({ vibrant, muted, name, genres }) => {
+const ArtistInfo = ({ vibrant, muted, name, id }) => {
   const vibrantBackground = vibrant
     ? `rgb(${Math.round(vibrant[0])},${Math.round(vibrant[1])},${Math.round(
         vibrant[2]
@@ -15,9 +15,10 @@ const ArtistInfo = ({ vibrant, muted, name, genres }) => {
 
   return (
     <div className="ArtistInfo" style={{ backgroundColor: vibrantBackground }}>
-      <div className="InnerArtistInfoContainer" style={{ color: mutedText }}>
-        <div className="ArtistTitle">{name}</div>
-        {/* <div className="ArtistGenres">{genres[0]}</div> */}
+      <div className="InnerArtistInfoContainer">
+        <a href={`https://open.spotify.com/artist/${id}`} target="_blank" style={{ color: mutedText }}>
+          <div className="ArtistTitle">{name}</div>
+        </a>
       </div>
     </div>
   );

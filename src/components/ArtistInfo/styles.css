@@ -18,6 +18,10 @@
     height: 90%;
 }
 
+a {
+    text-decoration: none;
+}
+
 .ArtistTitle {
     font-size: 64px;
     font-family: 'Roboto';

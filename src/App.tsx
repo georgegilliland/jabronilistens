@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <LandingPage />
       {data.artists.map(item =>{
-        return <ArtistContainer key={item.id} name={item.name} genres={item.genres} image={item.image.link} />
+        return <ArtistContainer key={item.id} name={item.name} id={item.id} image={item.image.link} />
       })}
     </div>
   );

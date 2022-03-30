@@ -9,7 +9,7 @@ const getColors = async (imageUrl) => {
   return await v.getPalette((err, palette) => palette);
 };
 
-const ArtistContainer = ({ name, genres, image }) => {
+const ArtistContainer = ({ name, id, image }) => {
 
   const [vibrant, setVibrant] = React.useState<any>(null);
   const [muted, setMuted] = React.useState<any>(null)
@@ -30,7 +30,7 @@ const ArtistContainer = ({ name, genres, image }) => {
       {vibrant !== null && muted !== null ? 
       <>
         <ArtistImage image={image} />
-        <ArtistInfo vibrant={vibrant} muted={muted} name={name} genres={genres} />
+        <ArtistInfo vibrant={vibrant} muted={muted} name={name} id={id} />
       </>
       :
       <div></div>

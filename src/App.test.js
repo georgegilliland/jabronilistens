@@ -20,7 +20,7 @@ const artistMock = {
           genres: ["instrumental math rock"],
           image: {
             link: "https://i.scdn.co/image/ab6761610000e5ebbd475ac5eca9c0d2d62719a6"
-          }
+          },
         }
       ]
     },
@@ -51,7 +51,7 @@ describe('Tests', () => {
   
     const loadingContainer = getByTestId(/loading-icon-container/i);
     expect(loadingContainer).toBeInTheDocument();
-    
+
     const artistText = await findByText("Vasudeva");
     expect(artistText).toBeInTheDocument();
   });
